@@ -1,0 +1,24 @@
+{
+  "name": "geekshubs-p3-peliculas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlosalabau/GeeksHubs-P3-Peliculas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlosalabau/GeeksHubs-P3-Peliculas/issues"
+  },
+  "homepage": "https://github.com/carlosalabau/GeeksHubs-P3-Peliculas#readme"
+}
