@@ -12,8 +12,6 @@
 //         main.innerHTML += `<div class="pelicula"><h1>Titulo: ${pelicula.title}</h1></div>`;
 //     });
 //     });
-
-
 function buscarPeliculas() {
   let main = document.querySelector('#columna');
   let buscar = document.querySelector('#buscador').value;
