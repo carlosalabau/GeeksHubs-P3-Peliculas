@@ -1,0 +1,18 @@
+.card{
+  border: none;
+  margin-top: 10px;
+  padding: 10px;
+}
+.card img{
+  width: 100%;
+}
+.card-text{
+  height: 11rem;
+  overflow: hidden;
+}
+.card-body{
+  border: 1px solid rgba(0,0,0,.125)
+}
+.btn-primary{
+  bottom: 0;
+}
