@@ -14,10 +14,11 @@
 //     });
 
 
-
+//FUNCION PARA SOLICITAR DATOS DE LA API Y PINTARLOS EN PANTALLA
 function buscarPeliculas() {
-
+  
   let main = document.querySelector('#columna');
+  main.innerHTML = '';
   let buscar = document.querySelector('#buscador').value;
   let url = 'https://api.themoviedb.org/3/search/movie?api_key=fd52edceaa66d53f219424c4d6b91b14&query=';
 
@@ -25,17 +26,17 @@ function buscarPeliculas() {
     .then(function(res) {
       let peliculas = res.data.results;
       for (let pelicula of peliculas) {
-        buscarGeneros(pelicula.genre_ids[0]);
-        /* for(let idGenero of pelicula.genre_ids){
+        
+        for(let idGenero of pelicula.genre_ids){
           // idGenero contiene los IDs de cada pelicula buscada
           buscarGeneros(idGenero);  
-        } */
+        }
     
        main.innerHTML += `<div class='card col-lg-3 col-sm-4 col-xs-6 col-12'>
         <img src='https://image.tmdb.org/t/p/original${pelicula.poster_path}' class='card-img-top i${pelicula.id}' alt=''>
         <div class='card-body'>
         <h5 class='card-title'>${pelicula.title}</h5>
-        <p class="genero g${pelicula.genre_ids[0]}"></p>
+        <p class="g${pelicula.genre_ids[0]} g${pelicula.genre_ids[1]}"></p>
         <p class='card-text b${pelicula.id}'>${pelicula.overview}</p>
         <p class="boton n${pelicula.id}"></p>
         <p><button class='btn btn-dark'>Ver pelicula</button></p>
@@ -52,7 +53,7 @@ function buscarPeliculas() {
 }
 
 
-
+//FUNCION PARA BUSCAR EL GENERO DE LA PELICULA E IMPRIMIRLO EN PANTALLA
 function buscarGeneros(id){
  fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=fd52edceaa66d53f219424c4d6b91b14&language=en-US')
  .then(res => res.json())
@@ -63,21 +64,20 @@ function buscarGeneros(id){
      genero.forEach(element => {
       for(let item of element){
         if(id == item.id){
-        console.log(id,item.name)
-        document.querySelector('.g'+id).innerHTML = `${item.name}`
+          document.querySelector('.g'+id).innerHTML = item.name;
         }
       }
      });
      });
     }
-
+//FUNCTION PARA CAMBIAR LA IMAGEN EN CASO QUE LA PELICULA NO TENGA
 function cambiarImg(id) {
   let imagen = document.querySelector('.i' + id);
   if (imagen.src === 'https://image.tmdb.org/t/p/originalnull') {
     imagen.src = 'img/nofoto.jpg';
   }
 }
-
+// FUNCION PARA AÑADIR UN BOTON CUANDO LA DESCRIPCION SEA MUY LARGA
 function addBoton(palabras,id){
   console.log('entro!')
   let texto = document.querySelector('.b'+id);
@@ -90,7 +90,7 @@ function addBoton(palabras,id){
 /*     document.querySelector('btn-dark').style.marginTop = '54px';
  */  }
 }
-
+//FUNCION PARA AMPLIAR LA DESCRIPCION
 function verMas(id) {
   document.querySelector('.b' + id).style.cssText = 'overflow:visible; height:auto';
 }
