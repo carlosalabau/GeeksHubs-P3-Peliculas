@@ -6,6 +6,7 @@ Comenzando 🚀
 
 git clone https://github.com/carlosalabau/GeeksHubs-P3-Peliculas
 
+
 Construido con 🛠️
 
 HTML5
@@ -13,9 +14,11 @@ CSS3
 JS
 Bootstrap - El framework web usado.
 
+
 Autores ✒️
 
 Carlos Alabau - Autor de toda la web desde cero.
+
 
 Licencia 📄
 
